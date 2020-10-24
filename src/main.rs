@@ -4,24 +4,6 @@ mod config;
 mod event;
 mod handlers;
 mod network;
-mod redirect_uri;
-mod ui;
-mod user_config;
-
-use crate::app::RouteId;
-use crate::event::Key;
-use anyhow::Result;
-use app::{ActiveBlock, App};
-use backtrace::Backtrace;
-use banner::BANNER;
-use clap::{App as ClapApp, Arg};
-use config::ClientConfig;
-use crossterm::{
-  cursor::MoveTo,
-  event::{DisableMouseCapture, EnableMouseCapture},
-  execute,
-  style::Print,
-  terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
   ExecutableCommand,
 };
 use network::{get_spotify, IoEvent, Network};
